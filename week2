@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basics</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <!--"post" is a method that??
+        "method" attribute selects how to send form data.
+    "action" attribute redirects the form into a specified location.
+    "target" attribute when ="_blank" takes it to another tab.
+    If ??
+    "input" here takes it as a textbox if type = "text"
+    We can use "label" or just enter the text inside the form.
+    For a textbox we need to put "type" attribute to text.
+    type="radio" generates a radiobutton.
+    "cols" and "rows" decides the dimension of the "textarea" which is somewhat similar to a textbox.
+    "name" and "value" are the list heading and list value where the list is stored in backend for use.
+    "fieldset" creates a box inside which inputs can be there.
+    "legend" is when a particular title is displayed on the line of the box.
+    "checkbox" type generates a checkbox.
+    -->
+    <form method="post" action="google.com" target="_blank">
+        <label>Gender:</label>
+        <input type="text" placeholder="Enter gender here">
+        Age:
+        <input type="text" placeholder="Enter age here">
+        Address:
+        <textarea cols="30" rows="10" placeholder="Enter address here"></textarea>
+        <br><br>
+        Gender:<input type="radio" name="g1" value="wt">Male
+        <input type="radio" name="g1" value="wt">Female
+        <fieldset>
+            <legend>Tasklist</legend>
+            <input type="checkbox" name="g1" value="wt">Wake up
+            <input type="checkbox" name="g1" value="wt">Brush
+        </fieldset>
+    <!--"submit" type submits the value inside textboxes etc and takes to the next part.
+    "reset" type resets the values from all the textboxes etc.
+    The above two are built-in types of button.
+    "number" type gives a box where we can increment or decrement numbers from the two arrows towards the right.
+    "min" and "max" are 2 attributes to select a range.Eg:Age.
+    "tel" is an attribute to enter phone number.(Here, we can use min and max as 100000 )
+    "placeholder" attribute makes a default text within the textbox for more clarity to what to enter there.
+-->
+        <button type="submit">Submit!</button>
+        <button type="reset">Reset</button>
+        <br><br>
+        Number:<input type="number" min="2" max="6" placeholder="Enter">
+        <br><br>
+        <!--"pattern" attribute works where numbers inside [] can be taken as input and the number of numbers is specified in {}-->
+        Phone no:<input type="tel" pattern="[6-9]{1}[0-9]{9}" placeholder="Enter phone number">
+        <br><br>
+        Email:<input type="email" placeholder="Enter email">
+        <br><br>
+        <!--"range" type makes a sliding bar.
+        "step" attribute jumps the value by specified number.
+        "value" attribute determines the start value.
+        "datalist" tag can have options where you can put markers below the range by matching the id using "list" attribute.-->
+        Range:<input type="range" min="0" max="100" step="5" value="0" list="values" placeholder="Enter range" name="Number">
+        <datalist id="values">
+            <!--Can act as a thermometer.-->
+            <option value="0" label="very cold!"></option>
+            <option value="25" label="cool"></option>
+            <option value="50" label="medium"></option>
+            <option value="75" label="getting warm!"></option>
+            <option value="100" label="hot!"></option>
+          </datalist>
+        <br><br>
+        <input type="button" value="Click Input">
+    </form>
+    <!--Drop-down menu/list using "select" tag and represented by "option tags".
+    "value" attribute is assigned to each option which can be accessed from backend.
+    "selected" is used to make that particular option default - displayed on the screen.-->
+    <select>
+        <option value="1">Karnataka</option>
+        <option value="2">West Bengal</option>
+        <option value="3" selected>Tamil Nadu</option>
+    </select>
+<!--"multiple" attribute makes the drop-down list displayed as a whole.
+    "disabled" attribute makes that particular option disabled. -->
+    <select multiple>
+        <option disabled value="4">Bangalore</option>
+        <option value="5">Mangalore</option>
+        <option value="6">Goa</option>
+    </select>
+    <br><br>
 
+    
+</body>
+</html>
