@@ -1,0 +1,17 @@
+body{
+    background-color: yellow;
+    background-image: url("giga.jpeg");
+}
+h1,p{
+    text-align: right;
+    color: red;
+    padding:25px;
+    border:5px solid red;
+    margin:50px;
+}
+h1{
+    background-color: skyblue;
+    position:sticky;
+    left:100px;
+    top:30px;
+}

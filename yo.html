@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            border: 5px solid black;
+            padding: 20px;
+            text-align:center;
+        }
+
+    </style>
+</head>
+<body>
+    <p id="01"></p>
+    <button id="02">ok</button>
+    <p id="03">
+    </p>
+    <div id="1">DIV 1
+        <div id="2">
+            DIV 2
+            <div id="3">
+                DIV 3
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    
+    let n = document.getElementById("02");
+    n.addEventListener("dblclick",function fe(){
+        n.innerHTML = "hello world";
+    }
+    )
+    let divElements = document.querySelectorAll('div');
+    for (let i = 0; i < divElements.length; i++)
+        divElements[i].addEventListener('click',clickHandler,false)
+    function clickHandler(){
+        alert(this.getAttribute("id") + "click event handled");
+    }
+    
+
+</script>
+</html>

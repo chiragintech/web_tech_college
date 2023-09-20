@@ -1,0 +1,15 @@
+header{
+    text-align: center;
+}
+body{
+    background-color: chartreuse;
+}
+form{
+    background-color: aqua;
+}
+label{
+    background-color: aquamarine;
+}
+fieldset{
+    text-align: center;
+}
