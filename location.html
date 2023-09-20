@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video width="300px" controls loop autoplay muted poster="giga.jpeg">
+        <source src="secret.mp4">
+    </video>
+
+    <audio controls>
+        <source src="secret.mp3">
+    </audio>
+
+    <button onclick="getLocation()">Get Location</button>
+
+    <p id="demo"></p>
+
+    
+</body>
+    <script>
+        var x = document.getElementById("demo");
+
+        function getLocation() {
+            if (navigator.geolocation)
+            {
+                //navigator.geolocation.getCurrentPosition(showPosition);
+                navigator.geolocation.watchPosition(showPosition);
+            }
+            else { 
+                x.innerHTML = "Geolocation is not supported by your browser";
+            }
+        }
+
+        function showPosition(position) {
+            x.innerHTML = "Latitude:" + position.coords.latitude + "Longitude:" + position.coords.longitude;
+        }
+    </script>
+</html>

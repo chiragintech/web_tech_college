@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+    <style>
+        h1{
+            background-color: red;
+        }
+        .p1{
+            color: brown;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1 id="demo"></h1>
+    <p class="para"></p>
+    <p id ="intro"></p>
+    <h2>okk bro</h2>
+    <h2>sure bro</h2>
+    <p class = "p1"></p>
+    <button onclick="alert('button clicked')">display</button>
+    <button onmouseover = "f1()">diass</button>
+</body>
+<script>
+    function f1() {
+        document.getElementById("demo").innerHTML = "HELLO";    }
+    let heading = document.getElementsByTagName("h1")[0];
+    document.getElementsByClassName("p1")[0];
+    document.getElementById("intro").innerHTML = "Print using ID";
+    //document.getElementsByClassName("p1")[1].innerHTML = "Print class";
+    document.querySelector("h1").innerHTML = "Using query selector";
+    var h2 = document.querySelectorAll("h2");
+    for (let i = 0; i < h2.length; i++)
+    {
+        h2[i].style.border = "10px solid red";
+        h2[i].innerHTML = "Hello";
+    } 
+    let paral = document.createElement("h4");
+    paral.innerHTML = "this is goooood";
+    document.body.appendChild(paral);
+</script>
+</html>
