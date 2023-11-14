@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React complex components</title>
+    <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+    <script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+</head>
+<!-- Different ways to style React Components
+• Inline CSS - using style attribute
+• CSS in JS - Using Libraries JSS and Styled Components
+• CSS modules – css loader and Sass & SCSS
+• Stylable-->
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        class SrchResult extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <ResImage/>
+                        <ResCaption/>
+                        <ResLink/>
+                    </div>
+                );
+            }
+        }
+        class ResImage extends React.Component
+        {
+            render() {
+                return (
+                    <div> 
+                        <img src="lion.jpeg"></img>
+                    </div> 
+                );
+            }
+        }
+        class ResLink extends React.Component {
+            render() {
+                return (
+                    <div> 
+                        <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.britannica.com%2Fanimal%2Flion&psig=AOvVaw3cteA702BzW7Gy8ePMsxyX&ust=1696487413076000&source=images&cd=vfe&ved=0CBIQjhxqFwoTCJDYkLfi24EDFQAAAAAdAAAAABAH">link</a>
+                    </div> 
+                );
+            }
+        }
+        class ResCaption extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <p>Lion | Characteristics, Habitat, & Facts | Britannica</p>
+                    
+                    </div> 
+                );
+            }
+        }
+        ReactDOM.render (
+            <div>
+                <SrchResult
+                />
+            </div>,document.getElementById('container')
+        );
+    </script>
+</body>
+</html>

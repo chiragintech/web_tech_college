@@ -3,81 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wowza</title>
-    <link rel="stylesheet" href="style.css">
+    <title>AJAX</title>
 </head>
 <body>
-    <h1>Why ?</h1>
-    <h2>Why?</h2>
-    <h3>Why?</h3>
-    <h4>Why?</h4>
-    <h5>Why?</h5>
-    <h6>Why?</h6>
-    <p>Hello,there!</p>
-    <p>log<sub>2</sub>x<sup>2</sup>
-        <br/>
-        <img src="giga.jpeg" height = "200px" width = "200px" alt="hello">
-    </p>
-    <img src="giga.jpeg" height = "200px" width = "200px" alt="hello">
-    <br>
-    <a href="http://www.google.com" target ="blank">GOOGLE</a>
-    <ol start = 5>   <!--type = i-->
-        <li>hello</li>
-        <li>i am</li>
-        <ul>
-            <li>this is good</li>
-        </ul>
-        <li>chirag</li>
-    </ol>
-    <ul>
-        <li>I love</li>
-        <li>dogs</li>
-        <li>and cats</li>
-    </ul>
-    <dl>
-        <dt>ABC</dt> <!--defintion tag-->
-        <dd>It is an amazing thing</dd> <!--definition data-->
-    </dl>
-    <table border="">
-        <tr> <!--table row-->
-            <th>hi</th> <!--table header-->
-            <th>bye</th>
-            <th rowspan="2">ok</th>
-        </tr>
-        <tr>
-            <td colspan="2">1</td>
-            <td>2</td>
-            
-        </tr>
-    </table>
-    <table align ="center" border="">
-        <tr>
-            <th>Name</th>
-            <th>Sem</th>
-            <th>Sub1</th>
-            <th>Sub2</th>
-        </tr>
-        <tr>
-            <td>A</td>
-            <td rowspan="2">3</td>
-            <td align="middle" colspan = 2>WT</td>
-        </tr>
-        <tr>
-            <td>B</td>
-            <td>WT</td>
-        <td>SE</td>        </tr>
-        <tr>
-            <td>C</td>
-            <td>5</td>
-            <td>SE</td>
-            <td>WT</td>
-        </tr>
-        <tr>
-            <td>D</td>
-            <td>5</td>
-            <td colspan="2" align="middle">SE</td>
-        </tr>
-    </table>
-    
+    <p id="container"></p>
+    <button onclick="loaddata()">Load Data</button>
 </body>
+<script>
+    function loaddata() {
+        let xhr = new XMLHttpRequest();
+        xhr.open("get","sample.txt",true);
+        xhr.onreadystatechange = showdata;
+        xhr.responseType = "text";
+        xhr.send();
+    }
+
+    function showdata() {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            document.querySelector("#container").innerHTML = this.response;
+        }
+    }
+</script>
 </html>

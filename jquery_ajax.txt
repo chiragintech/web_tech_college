@@ -1,0 +1,30 @@
+JQUERY ->
+AJAX - Asynchronous JS and XML
+jQuery provides methods that use XMLHttpRequest internally to make AJAX requests.
+The methods are 
+- $.ajax
+- $.get
+- $.post
+- $(“elem”).load
+- In a single method call, the entire functionality of making an AJAX call using XMLHttpRequest 
+and updating the page can be achieved.
+
+$.ajax
+
+Syntax->
+- $.ajax({name:value, name:value, ... })
+Example->
+- $.ajax({
+    url: "demo_test.txt",
+    success: function(result){
+        $("#div1").html(result); }
+    });
+- $.ajax('/jquery/submitData', {
+    type: 'POST',// http method
+    data: { myData: 'This is my data.' },// data to submit
+    success: function (data, status, xhr) {// success callback function
+    $('p').append('status: ' + status + ', data: ' + data); },
+    error: function (jqXhr, textStatus, errorMessage) {
+         $('p').append('Error' + errorMessage);
+    } 
+});

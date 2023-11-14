@@ -3,68 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PES Student Survey</title>
-    <link rel="stylesheet" href="styyle.css">
+    <title>Assignment</title>
+    <script src="jquery-3.6.0.js "></script>
 </head>
 <body>
+    <h2>Example of SVG Circle with text</h2>
+    <svg>
+        <circle cx="100" cy="80" r="65" fill="lightblue" />
+        <text x="33%" y="55%" text-anchor="middle">PES1UG22CS160</text>
+    </svg>
+    <div>
+        <header id="pack">Halo 2 video game</header>
+    </div>
+    <p id="cont">price $50.00</p>
+    <p id="pp">This is a paragraph</p>
+    <button id="but">Toggle list</button>
+    <ul>
+        <li id="l1">hello</li>
+        <li id="l2">hi</li>
+        <li id="l3">goodbye</li>
+        <li id="l4">bye</li>
+    </ul>
+    <script>
+        let par = document.querySelector("#cont");
+        let head = document.getElementById("pack");
+        let pa = document.getElementById("pp");
+        let l1 = document.getElementById("l1");
+        let l2 = document.getElementById("l2");
+        let l3 = document.getElementById("l3");
+        let l4 = document.getElementById("l4");
+        par.addEventListener("click",(event)=>{
+            alert("Hurry up, discount sale is going on!!");
+        });
+        head.addEventListener("click",(event)=> {
+            alert("Title:Halo 2 video game \n Price:$50.00 \n Rating: 4.5 stars \n");
+        });
+       
+        $(document).ready(function(){
+            $(pa).prepend("<b>\"I love jQuery!!!\"</b>");
+	    });	
 
-    <header>
-        <img width="50px" height="50px" src="pes_logo.jpg">
-        <h2>PES Student Survey</h2>
-    </header>
-    <a href="https://google.com">Google</a>
-
-    <form onsubmit="return submi">
-        <fieldset>
-            <label>
-                Name:
-            </label>
-            <input required type="text" placeholder="Enter name here:">
-            <br><br>
-            <label>
-                Age:
-            </label>
-            <input required type="number" placeholder="Enter age here:">
-            <br><br>
-             <label>
-                Email:
-             </label>
-            <input required type="email" placeholder="Enter email here">
-            <br><br>
-            <label>
-                Phone no:
-            </label>
-            <input required type="tel" pattern="[6-9]{1}[0-9]{9}" placeholder="Enter Phone Number">
-            <br><br>
-            <label>Gender:</label>
-            <input type="radio">Male
-            <input type="radio">Female
-            <br><br>
-                <legend>Details</legend>
-                <label>Languages known:</label><br>
-                <input type="checkbox">Python<br>
-                <input type="checkbox">C<br>
-                <input type="checkbox">C++<br>
-                <input type="checkbox">Java<br>
-                <input type="checkbox">R<br>
-            
-            <br><br>
-            <label>Interested domain</label>
-            <select>
-                <option value="1">AI/ML</option>
-                <option value="2">Cybersecurity</option>
-                <option value="3" selected>Web development</option>
-            </select>
-            <br><br>
-            <input id="1" type="submit">
-            <input type="reset">
-        </fieldset>
-    </form>
+        $(document).ready(function(){
+                $("ul").hide();
+				$("button").click(function(){
+                    $("ul").show();
+					$(l1).fadeOut(1000,function(){
+						$(l1).fadeIn(2000, function(){
+							$(this).click();
+						});
+					})
+				})
+			});
+    </script>
 </body>
-<script>
-    function submi() {
-        alert("submitted succesfully");
-        return false;
-    }
-</script>
 </html>

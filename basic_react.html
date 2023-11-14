@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <!--You can use crossorigin also-->
+    <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+    <script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+    <!--
+        Babel->
+        A JavaScript compiler that can translate markup or programming languages into JavaScript.
+        React uses Babel to convert JSX into JavaScript.
+        JSX(Javascript+XML)->
+        JavaScript Extension Syntax used to mix HTML with JavaScript.
+        Uses HTML syntax to create elements and components. Has tag name, attributes, and children.
+        JSX compiles the code into pure JavaScript which can be understood by the browser.
+    -->
+</head>
+<body>
+    <div id="container"></div>
+    <div id="box"></div>
+    <div id="package"></div>
+    <div id="jspack"></div>
+    <!--• Stateless Functional Component->
+            function Demo(props) {
+                return <h1> Welcome to REACT JS, {props.Name} </h1>;
+            }
+        • Stateful Class Component->
+            class HelloClass extends React.Component
+            {
+                 render()
+                    { 
+                        return React.createElement(‘h1’, null, ’welcome to REACT JS’);
+                    }
+            }
+            class Demo extends React.Component{ 
+                render(){
+                    return <h1> Welcome to REACT JS, {props.Name} </h1>; 
+                }
+            }
+        -->
+
+    <script type="text/babel">//to make sure, babel is being used.
+        var packageDiv = document.querySelector("#package");
+        var containerDiv = document.querySelector("#container");
+        var packageDiv2 = document.querySelector("#jspack");
+        //initialise a variable instead of declaring it within the render function.
+        //create stateless component
+        function PrintLine() {
+            return <p>Stateless component</p>
+        }
+        //call component
+        ReactDOM.render(<PrintLine/>,containerDiv)//(component_class_name,destination)
+        //create stateful component
+        class Hello extends React.Component
+        {
+            render()
+            {
+                return <h1>hello my friend</h1>
+            }
+        }
+
+        ReactDOM.render(<Hello/>,document.querySelector('#box'))
+
+        class Letter extends React.Component{
+            render() {
+                var letterStyle = {
+                    padding: "10px",
+                    margin: "20px",
+                    backgroundColor: this.props.bgcolor,//to alternate bgcolor
+                    color: "#333",
+                    display: "inline-block",
+                };
+                return (
+                    <div style = {letterStyle}>
+                        {this.props.children}
+                    </div>
+                )
+                //returning all the children who posses the style = {letterStyle}
+            }
+        }
+
+        ReactDOM.render(
+            <div>
+                <Letter bgcolor="red">A</Letter>
+                <Letter bgcolor="purple">E</Letter>
+                <Letter bgcolor="yellow">I</Letter>
+                <Letter bgcolor="lightblue">O</Letter>
+                <Letter bgcolor="lightpink">U</Letter>
+            </div>
+            ,packageDiv
+        )
+            //in pure js code
+        ReactDOM.render( 
+            React.createElement("div", null,
+                React.createElement("Letter", null, "Batman" ), 
+                React.createElement("Letter", null, "Iron Man" ),
+                React.createElement("Letter", null, "Nicolas Cage" ), 
+                React.createElement("Letter", null, "Mega Man" )),
+            packageDiv2
+        );
+        /*
+        JSX Code->
+        ReactDOM.render( 
+            <div>
+                <h1>Batman</h1>
+                <h1>Iron Man</h1>
+                <h1>Nicolas Cage</h1> 
+                <h1>Mega Man</h1>
+            </div>, 
+            destination 
+        );
+        JS Code for the same->
+        ReactDOM.render( 
+            React.createElement ( "div", null,
+            React.createElement ( "h1", null, "Batman" ), 
+            React.createElement ( "h1", null, "Iron Man" ),
+            React.createElement ( "h1", null, "Nicolas Cage" ), 
+            React.createElement ( "h1", null, "Mega Man" )),
+            destination
+        );
+        */
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>map</title>
+        <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+    </head>
+
+
+    <body>
+            
+            <div id = 'container'>
+    
+            </div>
+
+            <script type = 'text/babel'>
+                function Navmenu(props)
+                {
+                    const list = props.menuitems;
+
+                    const updateList = list.map((listItems)=>{
+                        return <li>{listItems}</li>;
+                    });
+
+                    
+                    return(
+                        <ul>
+                            {updateList}
+                        </ul>
+                    );
+                }
+
+                const menuItems = [1,2,3,4,5]
+
+                ReactDOM.render(<Navmenu menuitems={menuItems}/>, document.getElementById('container'));
+            </script>
+
+    </body>
+
+</html>

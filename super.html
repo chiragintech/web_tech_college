@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+		
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        class Counter extends React.Component {
+            constructor(props,context) {
+                super(props,context);
+                this.state = { seconds : 0};
+            
+            this.timerTick = this.timerTick.bind(this);
+            }
+            componentDidMount() {
+                setInterval(this.timerTick,1000);
+            }
+            //Object
+            timerTick() {
+                this.setState( {seconds: this.state.seconds + 1});
+            }
+            render() {
+                return (
+                    <h1>{this.state.seconds}</h1>
+                );
+            }
+        }
+       
+        class CounterDisplay extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <Counter/>
+                        <h2>seconds</h2>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(
+            <CounterDisplay/>,
+            document.getElementById("container")
+        )
+    </script>
+</body>
+</html>

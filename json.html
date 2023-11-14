@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <p id="d1"></p>
+    <p id="d2"></p>
+</body>
+<script>
+    var str = '{"name":"PES University","year":"2023"}';
+    var obj = JSON.parse(str);//string to json
+    document.getElementById("d1").innerHTML = obj.name;
+
+    obj.city = "Bengaluru";
+    obj.country = "Bharat";
+
+    str = JSON.stringify(obj);//json to string
+    document.getElementById("d2").innerHTML = str;
+</script>
+</html>
